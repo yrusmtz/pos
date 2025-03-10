@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="" />
+    <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/categorias.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/categorias.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/categorias.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/categorias.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/categorias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/plantilla.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +20,29 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "yrusmtz"
+  }
+}]]></component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="ef7cc548-d175-4888-8ea3-de6cb987c003" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yrusmtz/pos.git",
+    "accountId": "ef7cc548-d175-4888-8ea3-de6cb987c003"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$" />
@@ -25,6 +52,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2tmr536U5bScBhwnNn9nKuUDdDy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,6 +60,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "categorias",
     "last_opened_file_path": "C:/xampp/htdocs/pos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -67,11 +96,22 @@
       <workItem from="1741413381737" duration="31000" />
       <workItem from="1741413438347" duration="306000" />
       <workItem from="1741414285160" duration="1117000" />
-      <workItem from="1741573241631" duration="8007000" />
+      <workItem from="1741573241631" duration="12677000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

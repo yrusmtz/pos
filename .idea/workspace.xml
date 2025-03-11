@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/categorias.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/categorias.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/categorias.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/categorias.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/productos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/productos.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/usuarios.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/usuarios.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/clientes.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/clientes.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/productos.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/productos.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/js/plantilla.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/plantilla.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/productos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/plantilla.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,21 +32,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "yrusmtz"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yrusmtz&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="ef7cc548-d175-4888-8ea3-de6cb987c003" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/yrusmtz/pos.git",
-    "accountId": "ef7cc548-d175-4888-8ea3-de6cb987c003"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yrusmtz/pos.git&quot;,
+    &quot;accountId&quot;: &quot;ef7cc548-d175-4888-8ea3-de6cb987c003&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$" />
@@ -60,7 +64,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "categorias",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "feature/productosClientes",
     "last_opened_file_path": "C:/xampp/htdocs/pos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,7 +101,9 @@
       <workItem from="1741413381737" duration="31000" />
       <workItem from="1741413438347" duration="306000" />
       <workItem from="1741414285160" duration="1117000" />
-      <workItem from="1741573241631" duration="12677000" />
+      <workItem from="1741573241631" duration="13321000" />
+      <workItem from="1741623901383" duration="13308000" />
+      <workItem from="1741668901644" duration="1501000" />
     </task>
     <servers />
   </component>

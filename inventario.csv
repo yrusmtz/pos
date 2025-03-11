@@ -1,0 +1,40 @@
+﻿1,1,M001,Sofá de 3 plazas,,15,6000,9000
+2,1,M002,Mesa de centro de madera,,20,1500,2250
+3,1,M003,Juego de comedor (6 sillas),,10,12000,18000
+4,1,M004,Cama matrimonial con colchón,,12,8000,12000
+5,1,M005,Estante de libros,,25,800,1200
+6,2,E001,Refrigeradora de 2 puertas,,8,10000,15000
+7,2,E002,Lavadora automática,,10,7000,10500
+8,2,E003,Cocina de gas de 4 quemadores,,15,5000,7500
+9,2,E004,Microondas,,20,1200,1800
+10,2,E005,Televisor LED 50 pulgadas,,10,9000,13500
+11,3,D001,Juego de cortinas (sala),,30,600,900
+12,3,D002,Lámpara de techo,,25,400,600
+13,3,D003,Alfombra para sala,,18,900,1350
+14,3,D004,Cuadro decorativo,,22,300,450
+15,3,D005,Juego de sábanas (matrimonial),,28,500,750
+16,4,U001,Juego de ollas (6 piezas),,20,700,1050
+17,4,U002,Juego de cubiertos (6 servicios),,35,300,450
+18,4,U003,Vajilla (12 piezas),,15,800,1200
+19,4,U004,Licuadora,,25,500,750
+20,4,U005,Cafetera,,30,400,600
+21,5,H001,Taladro eléctrico,,15,2500,3750
+22,5,H002,Caja de herramientas (50 piezas),,10,3000,4500
+23,5,H003,Sierra circular,,8,4500,6750
+24,5,H004,Juego de destornilladores (10 uni),,20,800,1200
+25,5,H005,Llave ajustable (juego de 3),,25,900,1350
+26,6,EA001,Audífonos inalámbricos,,30,1200,1800
+27,6,EA002,Banco de energía de 10.000 mAh,,25,1500,2250
+28,6,EA003,Teclado mecánico RGB,,18,2000,3000
+29,6,EA004,Ratón ergonómico,,20,1000,1500
+30,6,EA005,Bocina Bluetooth,,15,3500,5250
+31,7,P001,Resma de papel carta,,50,250,375
+32,7,P002,Bolígrafos (paquete de 12),,40,150,225
+33,7,U004,Licuadora,,25,500,750
+34,7,U005,Cafetera,,30,400,600
+35,7,H001,Taladro eléctrico,,15,2500,3750
+36,8,D001,Balón de fútbol,,20,800,"1.200,00"
+37,8,D002,Bicicleta de montaña,,10,"10,000.00","15.000,00"
+38,8,D003,Juego de pesas (10 kg),,15,"3.000,00","4.500,00"
+39,8,D004,Raqueta de tenis,,12,"2.500,00","3.750,00"
+40,8,D005,Colchoneta de yoga,,25,"1.000,00","1.500,00"

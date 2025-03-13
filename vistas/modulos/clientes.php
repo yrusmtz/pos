@@ -86,7 +86,7 @@
 
                     <td>'.$value["compras"].'</td>
 
-                    <td>0000-00-00 00:00:00</td>
+                    <td>'.$value["ultima_compra"].'</td>
 
                     <td>'.$value["fecha"].'</td>
 
@@ -194,19 +194,17 @@ MODAL AGREGAR CLIENTE
 
             </div>
 
-            <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
-
+              <!-- ENTRADA PARA EL TELÉFONO -->
+              <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                      <input type="text" class="form-control input-lg"
+                             name="nuevoTelefono"
+                             placeholder="Ej: 9527-2684"
+                             data-inputmask="'mask':'9999-9999'"
+                             data-mask required>
+                  </div>
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -341,19 +339,18 @@ MODAL EDITAR CLIENTE
 
             </div>
 
-            <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
-
-                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
-
+              <!-- ENTRADA PARA EL TELÉFONO -->
+              <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                      <input type="text" class="form-control input-lg"
+                             name="editarTelefono"
+                             id="editarTelefono"
+                             placeholder="Ej: 9527-2684"
+                             data-inputmask="'mask':'9999-9999'"
+                             data-mask required>
+                  </div>
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             

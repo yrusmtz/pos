@@ -1,85 +1,80 @@
 <?php
 
 class ControladorUsuarios{
-
 	/*=============================================
 	INGRESO DE USUARIO
 	=============================================*/
+    static public function ctrIngresoUsuario() {
 
-	static public function ctrIngresoUsuario(){
+        if (isset($_POST["ingUsuario"])) {
 
-		if(isset($_POST["ingUsuario"])){
+            if (preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])) {
 
-			if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
+                // Encriptar la contraseña ingresada por el usuario utilizando la semilla personalizada
+                $encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG');
 
-			   	$encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+                $tabla = "usuarios";
 
-				$tabla = "usuarios";
+                $item = "usuario";
+                $valor = $_POST["ingUsuario"];
 
-				$item = "usuario";
-				$valor = $_POST["ingUsuario"];
+                // Obtener el registro correspondiente al usuario ingresado
+                $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+                // Validar que el usuario y la contraseña (encriptada) coincidan
+                if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar) {
 
-				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
+                    // Verificar que el usuario está activo
+                    if ($respuesta["estado"] == 1) {
 
-					if($respuesta["estado"] == 1){
+                        // Iniciar sesión guardando las variables en $_SESSION
+                        $_SESSION["iniciarSesion"] = "ok";
+                        $_SESSION["id"] = $respuesta["id"];
+                        $_SESSION["nombre"] = $respuesta["nombre"];
+                        $_SESSION["usuario"] = $respuesta["usuario"];
+                        $_SESSION["foto"] = $respuesta["foto"];
+                        $_SESSION["perfil"] = $respuesta["perfil"];
 
-						$_SESSION["iniciarSesion"] = "ok";
-						$_SESSION["id"] = $respuesta["id"];
-						$_SESSION["nombre"] = $respuesta["nombre"];
-						$_SESSION["usuario"] = $respuesta["usuario"];
-						$_SESSION["foto"] = $respuesta["foto"];
-						$_SESSION["perfil"] = $respuesta["perfil"];
+                        /*==============================================================
+                        REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN DEL USUARIO
+                        ==============================================================*/
 
-						/*=============================================
-						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
-						=============================================*/
+                        date_default_timezone_set('America/Bogota');
 
-						date_default_timezone_set('America/Bogota');
+                        $fecha = date('Y-m-d');
+                        $hora = date('H:i:s');
 
-						$fecha = date('Y-m-d');
-						$hora = date('H:i:s');
+                        $fechaActual = $fecha . ' ' . $hora;
 
-						$fechaActual = $fecha.' '.$hora;
+                        $item1 = "ultimo_login";
+                        $valor1 = $fechaActual;
 
-						$item1 = "ultimo_login";
-						$valor1 = $fechaActual;
+                        $item2 = "id";
+                        $valor2 = $respuesta["id"];
 
-						$item2 = "id";
-						$valor2 = $respuesta["id"];
+                        $ultimoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
 
-						$ultimoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+                        if ($ultimoLogin == "ok") {
+                            echo '<script>
+                            window.location = "inicio";
+                        </script>';
+                        }
 
-						if($ultimoLogin == "ok"){
+                    } else {
+                        echo '<br>
+                        <div class="alert alert-danger">El usuario aún no está activado</div>';
+                    }
 
-							echo '<script>
+                } else {
+                    echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+                }
 
-								window.location = "inicio";
+            }
 
-							</script>';
+        }
 
-						}				
-						
-					}else{
-
-						echo '<br>
-							<div class="alert alert-danger">El usuario aún no está activado</div>';
-
-					}		
-
-				}else{
-
-					echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
-
-				}
-
-			}	
-
-		}
-
-	}
+    }
 
 	/*=============================================
 	REGISTRO DE USUARIO

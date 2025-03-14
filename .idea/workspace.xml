@@ -6,21 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/datatable-productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/datatable-productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/datatable-ventas.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/datatable-ventas.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/ventas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/usuarios.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/usuarios.controlador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controladores/ventas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/ventas.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/categorias.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/categorias.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/clientes.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/clientes.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/conexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/editar-venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/editar-venta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/productos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/categorias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <workItem from="1741668901644" duration="1501000" />
       <workItem from="1741681581767" duration="4999000" />
       <workItem from="1741809561942" duration="18385000" />
-      <workItem from="1741897470208" duration="21238000" />
+      <workItem from="1741897470208" duration="23821000" />
     </task>
     <servers />
   </component>

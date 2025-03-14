@@ -6,11 +6,11 @@ class ControladorProductos{
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function ctrMostrarProductos($item, $valor){
+	static public function ctrMostrarProductos($item, $valor, $orden){
 
 		$tabla = "productos";
 
-		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
+		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor, $orden);
 
 		return $respuesta;
 
@@ -25,7 +25,7 @@ class ControladorProductos{
 		if(isset($_POST["nuevaDescripcion"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaDescripcion"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["nuevoStock"]) &&
+			   preg_match('/^[0-9]+$/', $_POST["nuevoStock"]) &&	
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioCompra"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioVenta"])){
 
@@ -64,7 +64,7 @@ class ControladorProductos{
 
 						$ruta = "vistas/img/productos/".$_POST["nuevoCodigo"]."/".$aleatorio.".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["nuevaImagen"]["tmp_name"]);
+						$origen = imagecreatefromjpeg($_FILES["nuevaImagen"]["tmp_name"]);						
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -84,7 +84,7 @@ class ControladorProductos{
 
 						$ruta = "vistas/img/productos/".$_POST["nuevoCodigo"]."/".$aleatorio.".png";
 
-						$origen = imagecreatefrompng($_FILES["nuevaImagen"]["tmp_name"]);
+						$origen = imagecreatefrompng($_FILES["nuevaImagen"]["tmp_name"]);						
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -162,7 +162,7 @@ class ControladorProductos{
 		if(isset($_POST["editarDescripcion"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarDescripcion"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarStock"]) &&
+			   preg_match('/^[0-9]+$/', $_POST["editarStock"]) &&	
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioCompra"]) &&
 			   preg_match('/^[0-9.]+$/', $_POST["editarPrecioVenta"])){
 
@@ -195,10 +195,10 @@ class ControladorProductos{
 
 					}else{
 
-						mkdir($directorio, 0755);
-
+						mkdir($directorio, 0755);	
+					
 					}
-
+					
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
 					=============================================*/
@@ -213,7 +213,7 @@ class ControladorProductos{
 
 						$ruta = "vistas/img/productos/".$_POST["editarCodigo"]."/".$aleatorio.".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["editarImagen"]["tmp_name"]);
+						$origen = imagecreatefromjpeg($_FILES["editarImagen"]["tmp_name"]);						
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -233,7 +233,7 @@ class ControladorProductos{
 
 						$ruta = "vistas/img/productos/".$_POST["editarCodigo"]."/".$aleatorio.".png";
 
-						$origen = imagecreatefrompng($_FILES["editarImagen"]["tmp_name"]);
+						$origen = imagecreatefrompng($_FILES["editarImagen"]["tmp_name"]);						
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -340,10 +340,25 @@ class ControladorProductos{
 
 				</script>';
 
-			}
+			}		
 		}
 
 
 	}
+
+	/*=============================================
+	MOSTRAR SUMA VENTAS
+	=============================================*/
+
+	static public function ctrMostrarSumaVentas(){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarSumaVentas($tabla);
+
+		return $respuesta;
+
+	}
+
 
 }

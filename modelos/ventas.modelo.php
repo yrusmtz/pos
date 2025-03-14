@@ -126,4 +126,82 @@ class ModeloVentas{
 
 	}
 
+	/*=============================================
+	RANGO FECHAS
+	=============================================*/
+    static public function mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal){
+
+        if($fechaInicial == null){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id ASC");
+
+            $stmt -> execute();
+
+            return $stmt -> fetchAll();
+
+        } else if ($fechaInicial == $fechaFinal) {
+
+            // Caso de una única fecha
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha LIKE :fecha");
+
+            $fecha = "%" . $fechaFinal . "%";
+            $stmt -> bindParam(":fecha", $fecha, PDO::PARAM_STR);
+
+            $stmt -> execute();
+
+            return $stmt -> fetchAll();
+
+        } else {
+
+            // Rango de fechas
+            $fechaActual = new DateTime();
+            $fechaActual->add(new DateInterval("P1D"));
+            $fechaActualMasUno = $fechaActual->format("Y-m-d");
+
+            $fechaFinal2 = new DateTime($fechaFinal);
+            $fechaFinal2->add(new DateInterval("P1D"));
+            $fechaFinalMasUno = $fechaFinal2->format("Y-m-d");
+
+            if($fechaFinalMasUno == $fechaActualMasUno){
+
+                // Considerar el día adicional
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN :fechaInicial AND :fechaFinal");
+
+                $stmt->bindParam(":fechaInicial", $fechaInicial, PDO::PARAM_STR);
+                $stmt->bindParam(":fechaFinal", $fechaFinalMasUno, PDO::PARAM_STR);
+
+            } else {
+
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN :fechaInicial AND :fechaFinal");
+
+                $stmt->bindParam(":fechaInicial", $fechaInicial, PDO::PARAM_STR);
+                $stmt->bindParam(":fechaFinal", $fechaFinal, PDO::PARAM_STR);
+
+            }
+
+            $stmt -> execute();
+
+            return $stmt -> fetchAll();
+        }
+    }
+
+	/*=============================================
+	SUMAR EL TOTAL DE VENTAS
+	=============================================*/
+
+	static public function mdlSumaTotalVentas($tabla){	
+
+		$stmt = Conexion::conectar()->prepare("SELECT SUM(neto) as total FROM $tabla");
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	
 }

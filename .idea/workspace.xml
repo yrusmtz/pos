@@ -6,24 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/usuarios.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/usuarios.controlador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controladores/ventas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/ventas.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/clientes.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/clientes.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/productos.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/productos.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/Joseph/984.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/admin/191.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/usuarios/admin/191.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/ana/260.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/default/anonymous.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/gaby/938.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/juan/603.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/julio/100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/crear-venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/crear-venta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/ventas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/plantilla.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/categorias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +51,14 @@
     &quot;accountId&quot;: &quot;ef7cc548-d175-4888-8ea3-de6cb987c003&quot;
   }
 }</component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$" />
     </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -74,7 +73,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/ventas&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/reportes&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/pos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -114,7 +113,8 @@
       <workItem from="1741623901383" duration="13308000" />
       <workItem from="1741668901644" duration="1501000" />
       <workItem from="1741681581767" duration="4999000" />
-      <workItem from="1741809561942" duration="11272000" />
+      <workItem from="1741809561942" duration="18385000" />
+      <workItem from="1741897470208" duration="23821000" />
     </task>
     <servers />
   </component>

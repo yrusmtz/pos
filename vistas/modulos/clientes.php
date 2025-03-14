@@ -1,3 +1,19 @@
+<?php
+
+if($_SESSION["perfil"] == "Especial"){
+
+  echo '<script>
+
+    window.location = "inicio";
+
+  </script>';
+
+  return;
+
+}
+
+?>
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -94,11 +110,15 @@
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
 
-                        <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                      if($_SESSION["perfil"] == "Administrador"){
 
-                      </div>  
+                          echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+
+                      }
+
+                      echo '</div>  
 
                     </td>
 
@@ -194,17 +214,19 @@ MODAL AGREGAR CLIENTE
 
             </div>
 
-              <!-- ENTRADA PARA EL TELÉFONO -->
-              <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                      <input type="text" class="form-control input-lg"
-                             name="nuevoTelefono"
-                             placeholder="Ej: 9527-2684"
-                             data-inputmask="'mask':'9999-9999'"
-                             data-mask required>
-                  </div>
+            <!-- ENTRADA PARA EL TELÉFONO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
               </div>
+
+            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -339,18 +361,19 @@ MODAL EDITAR CLIENTE
 
             </div>
 
-              <!-- ENTRADA PARA EL TELÉFONO -->
-              <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                      <input type="text" class="form-control input-lg"
-                             name="editarTelefono"
-                             id="editarTelefono"
-                             placeholder="Ej: 9527-2684"
-                             data-inputmask="'mask':'9999-9999'"
-                             data-mask required>
-                  </div>
+            <!-- ENTRADA PARA EL TELÉFONO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
               </div>
+
+            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             

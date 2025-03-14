@@ -1,3 +1,18 @@
+<?php
+
+if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
+
+  echo '<script>
+
+    window.location = "inicio";
+
+  </script>';
+
+  return;
+
+}
+
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -65,7 +80,7 @@
        foreach ($usuarios as $key => $value){
          
           echo ' <tr>
-                   <td>',($key+1),'</td>
+                  <td>'.($key+1).'</td>
                   <td>'.$value["nombre"].'</td>
                   <td>'.$value["usuario"].'</td>';
 
@@ -375,7 +390,7 @@ MODAL EDITAR USUARIO
 
               <p class="help-block">Peso máximo de la foto 2MB</p>
 
-              <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
+              <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizarEditar" width="100px">
 
               <input type="hidden" name="fotoActual" id="fotoActual">
 

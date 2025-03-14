@@ -464,24 +464,19 @@ class ControladorVentas{
 
 	}
 
-    /*=============================================
-        RANGO FECHAS
-        =============================================*/
-    static public function ctrRangoFechasVentas($fechaInicial, $fechaFinal){
+	/*=============================================
+	RANGO FECHAS
+	=============================================*/	
 
-        $tabla = "ventas";
+	static public function ctrRangoFechasVentas($fechaInicial, $fechaFinal){
 
-        // Si las fechas son iguales, aplica un rango completo del mismo día
-        if ($fechaInicial == $fechaFinal) {
-            $fechaInicial = $fechaInicial . " 00:00:00"; // Inicio del día
-            $fechaFinal = $fechaFinal . " 23:59:59";    // Fin del día
-        }
+		$tabla = "ventas";
 
-        $respuesta = ModeloVentas::mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal);
+		$respuesta = ModeloVentas::mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal);
 
-        return $respuesta;
-
-    }
+		return $respuesta;
+		
+	}
 
 	/*=============================================
 	DESCARGAR EXCEL

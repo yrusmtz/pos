@@ -128,62 +128,57 @@ class ModeloVentas{
 
 	/*=============================================
 	RANGO FECHAS
-	=============================================*/
-    static public function mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal){
+	=============================================*/	
 
-        if($fechaInicial == null){
+	static public function mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal){
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id ASC");
+		if($fechaInicial == null){
 
-            $stmt -> execute();
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id ASC");
 
-            return $stmt -> fetchAll();
+			$stmt -> execute();
 
-        } else if ($fechaInicial == $fechaFinal) {
+			return $stmt -> fetchAll();	
 
-            // Caso de una única fecha
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha LIKE :fecha");
 
-            $fecha = "%" . $fechaFinal . "%";
-            $stmt -> bindParam(":fecha", $fecha, PDO::PARAM_STR);
+		}else if($fechaInicial == $fechaFinal){
 
-            $stmt -> execute();
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha like '%$fechaFinal%'");
 
-            return $stmt -> fetchAll();
+			$stmt -> bindParam(":fecha", $fechaFinal, PDO::PARAM_STR);
 
-        } else {
+			$stmt -> execute();
 
-            // Rango de fechas
-            $fechaActual = new DateTime();
-            $fechaActual->add(new DateInterval("P1D"));
-            $fechaActualMasUno = $fechaActual->format("Y-m-d");
+			return $stmt -> fetchAll();
 
-            $fechaFinal2 = new DateTime($fechaFinal);
-            $fechaFinal2->add(new DateInterval("P1D"));
-            $fechaFinalMasUno = $fechaFinal2->format("Y-m-d");
+		}else{
 
-            if($fechaFinalMasUno == $fechaActualMasUno){
+			$fechaActual = new DateTime();
+			$fechaActual ->add(new DateInterval("P1D"));
+			$fechaActualMasUno = $fechaActual->format("Y-m-d");
 
-                // Considerar el día adicional
-                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN :fechaInicial AND :fechaFinal");
+			$fechaFinal2 = new DateTime($fechaFinal);
+			$fechaFinal2 ->add(new DateInterval("P1D"));
+			$fechaFinalMasUno = $fechaFinal2->format("Y-m-d");
 
-                $stmt->bindParam(":fechaInicial", $fechaInicial, PDO::PARAM_STR);
-                $stmt->bindParam(":fechaFinal", $fechaFinalMasUno, PDO::PARAM_STR);
+			if($fechaFinalMasUno == $fechaActualMasUno){
 
-            } else {
+				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN '$fechaInicial' AND '$fechaFinalMasUno'");
 
-                $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN :fechaInicial AND :fechaFinal");
+			}else{
 
-                $stmt->bindParam(":fechaInicial", $fechaInicial, PDO::PARAM_STR);
-                $stmt->bindParam(":fechaFinal", $fechaFinal, PDO::PARAM_STR);
 
-            }
+				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE fecha BETWEEN '$fechaInicial' AND '$fechaFinal'");
 
-            $stmt -> execute();
+			}
+		
+			$stmt -> execute();
 
-            return $stmt -> fetchAll();
-        }
-    }
+			return $stmt -> fetchAll();
+
+		}
+
+	}
 
 	/*=============================================
 	SUMAR EL TOTAL DE VENTAS

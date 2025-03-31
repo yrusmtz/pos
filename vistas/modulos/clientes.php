@@ -187,18 +187,18 @@ MODAL AGREGAR CLIENTE
             </div>
 
             <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="number" min="0" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento" required>
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                      <input type="text" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento (ej: 1234-5678-90123)" data-inputmask="'mask': '9999-9999-99999'" data-mask required>
+
+                  </div>
 
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA EL EMAIL -->
             
@@ -215,18 +215,18 @@ MODAL AGREGAR CLIENTE
             </div>
 
             <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+                      <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono (ej: 1234-5678)" data-inputmask="'mask': '9999-9999'" data-mask required>
+
+                  </div>
 
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             
@@ -334,18 +334,18 @@ MODAL EDITAR CLIENTE
             </div>
 
             <!-- ENTRADA PARA EL DOCUMENTO ID -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="number" min="0" class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" required>
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                      <input type="text" class="form-control input-lg" name="editarDocumentoId" id="editarDocumentoId" placeholder="Ingresar documento (ej: 1234-5678-90123)" data-inputmask="'mask': '9999-9999-99999'" data-mask required>
+
+                  </div>
 
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA EL EMAIL -->
             
@@ -362,18 +362,19 @@ MODAL EDITAR CLIENTE
             </div>
 
             <!-- ENTRADA PARA EL TELÉFONO -->
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+                      <input type="text" class="form-control input-lg" name="editarTelefono" id="editarTelefono" placeholder="Ingresar teléfono (ej: 1234-5678)" data-inputmask="'mask': '9999-9999'" data-mask required>
+
+                  </div>
 
               </div>
-
-            </div>
 
             <!-- ENTRADA PARA LA DIRECCIÓN -->
             

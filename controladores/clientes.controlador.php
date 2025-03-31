@@ -2,202 +2,237 @@
 
 class ControladorClientes{
 
-	/*=============================================
-	CREAR CLIENTES
-	=============================================*/
+    /*=============================================
+    CREAR CLIENTES
+    =============================================*/
 
-	static public function ctrCrearCliente(){
+    static public function ctrCrearCliente(){
 
-		if(isset($_POST["nuevoCliente"])){
+        if(isset($_POST["nuevoCliente"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["nuevoDocumentoId"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) && 
-			   preg_match('/^[()\-0-9 ]+$/', $_POST["nuevoTelefono"]) && 
-			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&
+                preg_match('/^\d{4}-\d{4}-\d{5}$/', $_POST["nuevoDocumentoId"]) &&
+                preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["nuevoEmail"]) &&
+                preg_match('/^\d{4}-\d{4}$/', $_POST["nuevoTelefono"]) &&
+                preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
 
-			   	$tabla = "clientes";
+                $tabla = "clientes";
 
-			   	$datos = array("nombre"=>$_POST["nuevoCliente"],
-					           "documento"=>$_POST["nuevoDocumentoId"],
-					           "email"=>$_POST["nuevoEmail"],
-					           "telefono"=>$_POST["nuevoTelefono"],
-					           "direccion"=>$_POST["nuevaDireccion"],
-					           "fecha_nacimiento"=>$_POST["nuevaFechaNacimiento"]);
+                // ******** NUEVA VALIDACIÓN DE DUPLICADO ********
+                $item = "documento";
+                $valor = $_POST["nuevoDocumentoId"];
 
-			   	$respuesta = ModeloClientes::mdlIngresarCliente($tabla, $datos);
+                $clienteExistente = ModeloClientes::mdlMostrarClientes($tabla, $item, $valor);
 
-			   	if($respuesta == "ok"){
+                if($clienteExistente){
 
-					echo'<script>
+                    echo '<script>
 
-					swal({
-						  type: "success",
-						  title: "El cliente ha sido guardado correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
+                       swal({
+                            type: "error",
+                            title: "¡Ya existe un cliente con este número de Documento!",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar"
+                            }).then(function(result){
+                               if (result.value) {
 
-									window.location = "clientes";
+                               window.location = "clientes";
 
-									}
-								})
+                               }
+                            })
 
-					</script>';
+                       </script>';
 
-				}
+                } else {
 
-			}else{
+                    // ******** FIN NUEVA VALIDACIÓN ********
 
-				echo'<script>
+                    $datos = array(
+                        "nombre"=>$_POST["nuevoCliente"],
+                        "documento"=>$_POST["nuevoDocumentoId"],
+                        "email"=>$_POST["nuevoEmail"],
+                        "telefono"=>$_POST["nuevoTelefono"],
+                        "direccion"=>$_POST["nuevaDireccion"],
+                        "fecha_nacimiento"=>$_POST["nuevaFechaNacimiento"]
+                    );
 
-					swal({
-						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
+                    $respuesta = ModeloClientes::mdlIngresarCliente($tabla, $datos);
 
-							window.location = "clientes";
+                    if($respuesta == "ok"){
 
-							}
-						})
+                        echo'<script>
 
-			  	</script>';
-			}
+                     swal({
+                          type: "success",
+                          title: "El cliente ha sido guardado correctamente",
+                          showConfirmButton: true,
+                          confirmButtonText: "Cerrar"
+                          }).then(function(result){
+                             if (result.value) {
 
-		}
+                             window.location = "clientes";
 
-	}
+                             }
+                          })
 
-	/*=============================================
-	MOSTRAR CLIENTES
-	=============================================*/
+                     </script>';
 
-	static public function ctrMostrarClientes($item, $valor){
+                    }
 
-		$tabla = "clientes";
+                }
 
-		$respuesta = ModeloClientes::mdlMostrarClientes($tabla, $item, $valor);
+            } else {
 
-		return $respuesta;
+                // Depuración: Imprime los valores y los errores
+                error_log("Validación de datos fallida al crear cliente.");
+                error_log("Datos del cliente: " . print_r($_POST, true));
 
-	}
+                echo'<script>
 
-	/*=============================================
-	EDITAR CLIENTE
-	=============================================*/
+                   swal({
+                        type: "error",
+                        title: "¡El cliente no puede ir vacío o llevar caracteres especiales o los formatos son incorrectos!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+                        }).then(function(result){
+                         if (result.value) {
 
-	static public function ctrEditarCliente(){
+                         window.location = "clientes";
 
-		if(isset($_POST["editarCliente"])){
+                         }
+                      })
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCliente"]) &&
-			   preg_match('/^[0-9]+$/', $_POST["editarDocumentoId"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) && 
-			   preg_match('/^[()\-0-9 ]+$/', $_POST["editarTelefono"]) && 
-			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
+                </script>';
+            }
 
-			   	$tabla = "clientes";
+        }
 
-			   	$datos = array("id"=>$_POST["idCliente"],
-			   				   "nombre"=>$_POST["editarCliente"],
-					           "documento"=>$_POST["editarDocumentoId"],
-					           "email"=>$_POST["editarEmail"],
-					           "telefono"=>$_POST["editarTelefono"],
-					           "direccion"=>$_POST["editarDireccion"],
-					           "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]);
+    }
 
-			   	$respuesta = ModeloClientes::mdlEditarCliente($tabla, $datos);
+    /*=============================================
+    MOSTRAR CLIENTES
+    =============================================*/
 
-			   	if($respuesta == "ok"){
+    static public function ctrMostrarClientes($item, $valor){
 
-					echo'<script>
+        $tabla = "clientes";
 
-					swal({
-						  type: "success",
-						  title: "El cliente ha sido cambiado correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
+        $respuesta = ModeloClientes::mdlMostrarClientes($tabla, $item, $valor);
 
-									window.location = "clientes";
+        return $respuesta;
 
-									}
-								})
+    }
 
-					</script>';
+    /*=============================================
+    EDITAR CLIENTE
+    =============================================*/
 
-				}
+    static public function ctrEditarCliente(){
 
-			}else{
+        if(isset($_POST["editarCliente"])){
 
-				echo'<script>
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCliente"]) &&
+                preg_match('/^\d{4}-\d{4}-\d{5}$/', $_POST["editarDocumentoId"]) &&
+                preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["editarEmail"]) &&
+                preg_match('/^\d{4}-\d{4}$/', $_POST["editarTelefono"]) &&
+                preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarDireccion"])){
 
-					swal({
-						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
+                $tabla = "clientes";
 
-							window.location = "clientes";
+                $datos = array(
+                    "id"=>$_POST["idCliente"],
+                    "nombre"=>$_POST["editarCliente"],
+                    "documento"=>$_POST["editarDocumentoId"],
+                    "email"=>$_POST["editarEmail"],
+                    "telefono"=>$_POST["editarTelefono"],
+                    "direccion"=>$_POST["editarDireccion"],
+                    "fecha_nacimiento"=>$_POST["editarFechaNacimiento"]
+                );
 
-							}
-						})
+                $respuesta = ModeloClientes::mdlEditarCliente($tabla, $datos);
 
-			  	</script>';
+                if($respuesta == "ok"){
 
+                    echo'<script>
 
+                 swal({
+                      type: "success",
+                      title: "El cliente ha sido cambiado correctamente",
+                      showConfirmButton: true,
+                      confirmButtonText: "Cerrar"
+                      }).then(function(result){
+                             if (result.value) {
 
-			}
+                             window.location = "clientes";
 
-		}
+                             }
+                          })
 
-	}
+                 </script>';
 
-	/*=============================================
-	ELIMINAR CLIENTE
-	=============================================*/
+                }
 
-	static public function ctrEliminarCliente(){
+            }else{
 
-		if(isset($_GET["idCliente"])){
+                echo'<script>
 
-			$tabla ="clientes";
-			$datos = $_GET["idCliente"];
+                 swal({
+                      type: "error",
+                      title: "¡El cliente no puede ir vacío o llevar caracteres especiales o los formatos son incorrectos!",
+                      showConfirmButton: true,
+                      confirmButtonText: "Cerrar"
+                      }).then(function(result){
+                       if (result.value) {
 
-			$respuesta = ModeloClientes::mdlEliminarCliente($tabla, $datos);
+                       window.location = "clientes";
 
-			if($respuesta == "ok"){
+                       }
+                    })
 
-				echo'<script>
+              </script>';
+            }
 
-				swal({
-					  type: "success",
-					  title: "El cliente ha sido borrado correctamente",
-					  showConfirmButton: true,
-					  confirmButtonText: "Cerrar",
-					  closeOnConfirm: false
-					  }).then(function(result){
-								if (result.value) {
+        }
 
-								window.location = "clientes";
+    }
 
-								}
-							})
+    /*=============================================
+    ELIMINAR CLIENTE
+    =============================================*/
 
-				</script>';
+    static public function ctrEliminarCliente(){
 
-			}
+        if(isset($_GET["idCliente"])){
 
-		}
+            $tabla ="clientes";
+            $datos = $_GET["idCliente"];
 
-	}
+            $respuesta = ModeloClientes::mdlEliminarCliente($tabla, $datos);
+
+            if($respuesta == "ok"){
+
+                echo'<script>
+
+             swal({
+                  type: "success",
+                  title: "El cliente ha sido borrado correctamente",
+                  showConfirmButton: true,
+                  confirmButtonText: "Cerrar",
+                  closeOnConfirm: false
+                  }).then(function(result){
+                         if (result.value) {
+
+                         window.location = "clientes";
+
+                         }
+                      })
+
+             </script>';
+
+            }
+
+        }
+
+    }
 
 }
-

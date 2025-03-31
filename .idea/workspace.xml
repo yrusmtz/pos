@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/productos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/productos.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/js/productos.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/productos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/clientes.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/clientes.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/categorias.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/clientes.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/datatable-productos.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/datatable-ventas.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/productos.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/ajax/usuarios.ajax.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/clientes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +115,7 @@
       <workItem from="1741897470208" duration="23821000" />
       <workItem from="1742007589583" duration="1980000" />
       <workItem from="1742090280453" duration="761000" />
-      <workItem from="1743380495685" duration="7303000" />
+      <workItem from="1743380495685" duration="10003000" />
     </task>
     <servers />
   </component>

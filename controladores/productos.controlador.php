@@ -6,14 +6,30 @@ class ControladorProductos{
       MOSTRAR PRODUCTOS
       =============================================*/
 
-    static public function ctrMostrarProductos($item, $valor, $orden){
-
+    static public function ctrMostrarProductos($item, $valor, $orden) {
         $tabla = "productos";
-
         $respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor, $orden);
 
+        if (is_array($respuesta)) {
+            if (isset($respuesta[0])) {
+                foreach ($respuesta as &$row) {
+                    if (isset($row["precio_compra"])) {
+                        $row["precio_compra"] = number_format($row["precio_compra"], 2, '.', ','); // Formatear con 2 decimales
+                    }
+                    if (isset($row["precio_venta"])) {
+                        $row["precio_venta"] = number_format($row["precio_venta"], 2, '.', ','); // Formatear con 2 decimales
+                    }
+                }
+            } else if (is_array($respuesta) || is_object($respuesta)) {
+                if (isset($respuesta["precio_compra"])) {
+                    $respuesta["precio_compra"] = number_format($respuesta["precio_compra"], 2, '.', ',');
+                }
+                if (isset($respuesta["precio_venta"])) {
+                    $respuesta["precio_venta"] = number_format($respuesta["precio_venta"], 2, '.', ',');
+                }
+            }
+        }
         return $respuesta;
-
     }
     /*=============================================
     CREAR PRODUCTO

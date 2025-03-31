@@ -7,7 +7,19 @@
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controladores/productos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/productos.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/js/ventas.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/ventas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/101/105.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/101/105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/101/106.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/101/107.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/101/descarga.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/102/940.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/103/763.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/104/957.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/105/630.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/productos/106/635.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio/cajas-superiores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio/cajas-superiores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio/productos-recientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio/productos-recientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/productos-mas-vendidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/productos-mas-vendidos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

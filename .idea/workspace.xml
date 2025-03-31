@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajax/productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/productos.ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/categorias.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/categorias.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controladores/productos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/productos.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/sofia/414.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/compradores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/compradores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/grafico-ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/grafico-ventas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/vendedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/vendedores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/js/productos.js" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/js/productos.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +107,7 @@
       <workItem from="1741897470208" duration="23821000" />
       <workItem from="1742007589583" duration="1980000" />
       <workItem from="1742090280453" duration="761000" />
-      <workItem from="1743380495685" duration="3848000" />
+      <workItem from="1743380495685" duration="7303000" />
     </task>
     <servers />
   </component>

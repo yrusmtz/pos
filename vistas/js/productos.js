@@ -55,36 +55,49 @@ $("#nuevaCategoria").change(function(){
 	var idCategoria = $(this).val();
 
 	var datos = new FormData();
-  	datos.append("idCategoria", idCategoria);
+	datos.append("idCategoria", idCategoria);
 
-  	$.ajax({
+	$.ajax({
 
-      url:"ajax/productos.ajax.php",
-      method: "POST",
-      data: datos,
-      cache: false,
-      contentType: false,
-      processData: false,
-      dataType:"json",
-      success:function(respuesta){
+		url:"ajax/productos.ajax.php",
+		type: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType:"json",
+		success:function(respuesta){
 
-      	if(!respuesta){
+			var codigo = "";
+			if(!respuesta || !respuesta.codigo){
+				codigo = idCategoria + "-001";
+			}else{
+				codigo = respuesta.codigo; // Usar el código devuelto
 
-      		var nuevoCodigo = idCategoria+"01";
-      		$("#nuevoCodigo").val(nuevoCodigo);
+				//  Robustez extra: Verificar que no sea NaN
+				if (codigo.includes("NaN")) {
+					codigo = idCategoria + "-001"; // Default
+				}
+			}
+			$("#nuevoCodigo").val(codigo);
+			$("#nuevoCodigo").attr("readonly","readonly");
 
-      	}else{
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			console.error("AJAX Error:", textStatus, errorThrown);
+			$("#nuevoCodigo").val(idCategoria + "-001");
+			$("#nuevoCodigo").attr("readonly","readonly");
+		}
 
-      		var nuevoCodigo = Number(respuesta["codigo"]) + 1;
-          	$("#nuevoCodigo").val(nuevoCodigo);
+	});
 
-      	}
-                
-      }
+});
 
-  	})
+$("#modalAgregarProducto").on('shown.bs.modal', function(){
 
-})
+	$("#nuevaCategoria").val($("#nuevaCategoria option:eq(0)").val()).trigger('change');
+
+});
 
 /*=============================================
 AGREGANDO PRECIO DE VENTA

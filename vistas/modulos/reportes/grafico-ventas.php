@@ -109,7 +109,7 @@ GRÁFICO DE VENTAS
     pointStrokeColors: ['#efefef'],
     gridLineColor    : '#efefef',
     gridTextFamily   : 'Open Sans',
-    preUnits         : '$',
+    preUnits         : 'L.',
     gridTextSize     : 10
   });
 

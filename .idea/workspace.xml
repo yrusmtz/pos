@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="270caad0-f544-4d31-abc0-ae26bf567171" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controladores/ventas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/ventas.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/extensiones/tcpdf/pdf/images/logo-negro-bloque.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/back2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-blanco.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/icono-negro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-bloque.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-blanco-lineal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-bloque.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/img/plantilla/logo-negro-lineal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/categorias.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/categorias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/inicio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vistas/modulos/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/productos.ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/productos.ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/categorias.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/categorias.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/clientes.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/clientes.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controladores/productos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/controladores/productos.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/ventas.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelos/ventas.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/img/usuarios/sofia/414.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/compradores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/compradores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/grafico-ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/grafico-ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/reportes/vendedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/reportes/vendedores.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vistas/modulos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vistas/modulos/ventas.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/reportes&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/pos&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -115,6 +114,9 @@
       <workItem from="1741681581767" duration="4999000" />
       <workItem from="1741809561942" duration="18385000" />
       <workItem from="1741897470208" duration="23821000" />
+      <workItem from="1742007589583" duration="1980000" />
+      <workItem from="1742090280453" duration="761000" />
+      <workItem from="1743380495685" duration="3848000" />
     </task>
     <servers />
   </component>

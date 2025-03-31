@@ -66,9 +66,6 @@ class ControladorClientes{
 						})
 
 			  	</script>';
-
-
-
 			}
 
 		}
@@ -196,7 +193,7 @@ class ControladorClientes{
 
 				</script>';
 
-			}		
+			}
 
 		}
 

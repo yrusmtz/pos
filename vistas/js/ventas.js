@@ -60,108 +60,138 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	$(this).addClass("btn-default");
 
 	var datos = new FormData();
-    datos.append("idProducto", idProducto);
+	datos.append("idProducto", idProducto);
 
-     $.ajax({
+	$.ajax({
 
-     	url:"ajax/productos.ajax.php",
-      	method: "POST",
-      	data: datos,
-      	cache: false,
-      	contentType: false,
-      	processData: false,
-      	dataType:"json",
-      	success:function(respuesta){
+		url:"ajax/productos.ajax.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType:"json",
+		success:function(respuesta, textStatus, jqXHR){  // Agregar textStatus y jqXHR
 
-      	    var descripcion = respuesta["descripcion"];
-          	var stock = respuesta["stock"];
-          	var precio = respuesta["precio_venta"];
+			console.log("Respuesta AJAX (texto plano):", jqXHR.responseText); // Añadido
+			console.log("Respuesta AJAX:", respuesta); // Añadido
 
-          	/*=============================================
-          	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
-          	=============================================*/
+			if (!respuesta || respuesta.error) {
+				console.error("Error al obtener el producto:", respuesta ? respuesta.error : "Respuesta vacía");
+				swal({
+					title: "Error",
+					text: respuesta ? respuesta.error : "Respuesta vacía del servidor",
+					type: "error",
+					confirmButtonText: "¡Cerrar!"
+				});
 
-          	if(stock == 0){
+				$("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
 
-      			swal({
-			      title: "No hay stock disponible",
-			      type: "error",
-			      confirmButtonText: "¡Cerrar!"
-			    });
+				return;
 
-			    $("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
+			}
 
-			    return;
+			var descripcion = respuesta["descripcion"];
+			var stock = respuesta["stock"];
+			var precio = respuesta["precio_venta"];
 
-          	}
+			/*=============================================
+            EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
+            =============================================*/
 
-          	$(".nuevoProducto").append(
+			if(stock == 0){
 
-          	'<div class="row" style="padding:5px 15px">'+
+				swal({
+					title: "No hay stock disponible",
+					type: "error",
+					confirmButtonText: "¡Cerrar!"
+				});
 
-			  '<!-- Descripción del producto -->'+
-	          
-	          '<div class="col-xs-6" style="padding-right:0px">'+
-	          
-	            '<div class="input-group">'+
-	              
-	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
+				$("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
 
-	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+descripcion+'" readonly required>'+
+				return;
 
-	            '</div>'+
+			}
 
-	          '</div>'+
+			$(".nuevoProducto").append(
 
-	          '<!-- Cantidad del producto -->'+
+				'<div class="row" style="padding:5px 15px">'+
 
-	          '<div class="col-xs-3">'+
-	            
-	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock="'+stock+'" nuevoStock="'+Number(stock-1)+'" required>'+
+				''+
 
-	          '</div>' +
+				'<div class="col-xs-6" style="padding-right:0px">'+
 
-	          '<!-- Precio del producto -->'+
+				'<div class="input-group">'+
 
-	          '<div class="col-xs-3 ingresoPrecio" style="padding-left:0px">'+
+				'<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
 
-	            '<div class="input-group">'+
+				'<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+descripcion+'" readonly required>'+
 
-	              '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
-	                 
-	              '<input type="text" class="form-control nuevoPrecioProducto" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" readonly required>'+
-	 
-	            '</div>'+
-	             
-	          '</div>'+
+				'</div>'+
 
-	        '</div>') 
+				'</div>'+
 
-	        // SUMAR TOTAL DE PRECIOS
+				''+
 
-	        sumarTotalPrecios()
+				'<div class="col-xs-3">'+
 
-	        // AGREGAR IMPUESTO
+				'<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock="'+stock+'" nuevoStock="'+Number(stock-1)+'" required>'+
 
-	        agregarImpuesto()
+				'</div>' +
 
-	        // AGRUPAR PRODUCTOS EN FORMATO JSON
+				''+
 
-	        listarProductos()
+				'<div class="col-xs-3 ingresoPrecio" style="padding-left:0px">'+
 
-	        // PONER FORMATO AL PRECIO DE LOS PRODUCTOS
+				'<div class="input-group">'+
 
-	        $(".nuevoPrecioProducto").number(true, 2);
+				'<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
+
+				'<input type="text" class="form-control nuevoPrecioProducto" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" readonly required>'+
+
+				'</div>'+
+
+				'</div>'+
+
+				'</div>')
+
+			// SUMAR TOTAL DE PRECIOS
+
+			sumarTotalPrecios()
+
+			// AGREGAR IMPUESTO
+
+			agregarImpuesto()
+
+			// AGRUPAR PRODUCTOS EN FORMATO JSON
+
+			listarProductos()
+
+			// PONER FORMATO AL PRECIO DE LOS PRODUCTOS
+
+			$(".nuevoPrecioProducto").number(true, 2);
 
 
 			localStorage.removeItem("quitarProducto");
 
-      	}
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			console.error("Error AJAX completo:", jqXHR, textStatus, errorThrown);  // Detalle del error
+			console.error("Respuesta del servidor (error):", jqXHR.responseText); // La respuesta que devuelve el servidor, aunque sea error
+			swal({
+				title: "Error",
+				text: "Error al obtener la información del producto. Inténtelo de nuevo. Status: " + textStatus,
+				type: "error",
+				confirmButtonText: "¡Cerrar!"
+			});
 
-     })
+			$("button[idProducto='"+idProducto+"']").addClass("btn-primary agregarProducto");
+
+		}
+
+	})
 
 });
-
 /*=============================================
 CUANDO CARGUE LA TABLA CADA VEZ QUE NAVEGUE EN ELLA
 =============================================*/

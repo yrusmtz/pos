@@ -3,8 +3,8 @@
 class ControladorProductos{
 
     /*=============================================
-    MOSTRAR PRODUCTOS
-    =============================================*/
+      MOSTRAR PRODUCTOS
+      =============================================*/
 
     static public function ctrMostrarProductos($item, $valor, $orden){
 
@@ -12,23 +12,9 @@ class ControladorProductos{
 
         $respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor, $orden);
 
-        // Formatear precios al obtener los productos
-        if (is_array($respuesta)) {
-            if (isset($respuesta[0])) { // Verifica si es un array de productos
-                foreach ($respuesta as &$row) {
-                    $row["precio_compra"] = number_format($row["precio_compra"], 0); // Formateado con 0 decimales
-                    $row["precio_venta"] = number_format($row["precio_venta"], 0);   // Formateado con 0 decimales
-                }
-            } else if (is_array($respuesta) || is_object($respuesta)) { // Si solo es un producto (objeto o array)
-                $respuesta["precio_compra"] = number_format($respuesta["precio_compra"], 0);
-                $respuesta["precio_venta"] = number_format($respuesta["precio_venta"], 0);
-            }
-        }
-
         return $respuesta;
 
     }
-
     /*=============================================
     CREAR PRODUCTO
     =============================================*/
